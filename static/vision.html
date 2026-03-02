@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hatchling Beach — The Brand Behind the Beach</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --teal: #008B8B;
+  --teal-dark: #006666;
+  --gold: #C5A55A;
+  --gold-light: #D4BA7A;
+  --sand: #FAF0E6;
+  --ocean: #1A6B7C;
+  --white: #FFFFFF;
+  --dark: #1A1A2E;
+  --text: #333333;
+  --text-light: #666666;
+  --coral: #E8897A;
+}
+
+html { scroll-behavior: smooth; }
+body { font-family: 'Lato', sans-serif; color: var(--text); background: var(--white); line-height: 1.6; }
+h1, h2, h3, h4 { font-family: 'Playfair Display', serif; }
+
+/* NAV */
+nav {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 5%; background: var(--white);
+  position: sticky; top: 0; z-index: 1000;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+}
+.nav-logo { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: var(--teal); text-decoration: none; }
+.nav-logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 30px; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--text); font-size: 13px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; transition: color 0.3s; }
+.nav-links a:hover { color: var(--teal); }
+.nav-cta { background: var(--teal); color: var(--white) !important; padding: 10px 24px; border-radius: 3px; }
+.nav-cta:hover { background: var(--teal-dark); }
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, var(--dark) 0%, #0a2a3a 40%, var(--teal-dark) 100%);
+  color: var(--white); text-align: center; padding: 120px 5% 100px;
+  position: relative; overflow: hidden;
+}
+.hero::after {
+  content: ''; position: absolute; bottom: -2px; left: 0; right: 0; height: 80px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 80'%3E%3Cpath fill='%23ffffff' d='M0,40 C360,80 720,0 1080,40 C1260,60 1380,50 1440,45 L1440,80 L0,80 Z'%3E%3C/path%3E%3C/svg%3E") no-repeat bottom;
+  background-size: cover;
+}
+.hero-label { font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; font-weight: 700; }
+.hero h1 { font-size: 56px; line-height: 1.1; margin-bottom: 24px; max-width: 800px; margin-left: auto; margin-right: auto; }
+.hero p { font-size: 20px; max-width: 650px; margin: 0 auto 40px; opacity: 0.85; line-height: 1.7; }
+.hero-stats { display: flex; justify-content: center; gap: 50px; margin-top: 50px; flex-wrap: wrap; }
+.hero-stat { text-align: center; }
+.hero-stat .num { font-family: 'Playfair Display', serif; font-size: 48px; font-weight: 700; color: var(--gold); display: block; }
+.hero-stat .label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; opacity: 0.7; }
+
+/* SECTION COMMON */
+section { padding: 90px 5%; }
+.section-label { display: inline-block; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 12px; }
+.section-header { text-align: center; max-width: 700px; margin: 0 auto 50px; }
+.section-header h2 { font-size: 40px; color: var(--dark); margin-bottom: 16px; }
+.section-header p { font-size: 17px; color: var(--text-light); line-height: 1.8; }
+
+/* OPPORTUNITY */
+.opportunity { background: var(--white); }
+.opp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1100px; margin: 0 auto; align-items: center; }
+.opp-text h3 { font-size: 30px; color: var(--dark); margin-bottom: 20px; }
+.opp-text p { font-size: 16px; color: var(--text-light); line-height: 1.8; margin-bottom: 16px; }
+.market-callout { background: var(--sand); border-left: 4px solid var(--gold); padding: 20px 24px; margin-top: 20px; }
+.market-callout strong { display: block; font-size: 28px; color: var(--teal); font-family: 'Playfair Display', serif; }
+.market-callout span { font-size: 14px; color: var(--text-light); }
+
+/* PRODUCT SHOWCASE */
+.products { background: var(--sand); }
+.product-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1100px; margin: 0 auto; }
+.product-card {
+  background: var(--white); border-radius: 4px; overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.06); transition: transform 0.3s;
+}
+.product-card:hover { transform: translateY(-4px); }
+.product-card.featured { border: 2px solid var(--gold); position: relative; }
+.featured-tag { position: absolute; top: 16px; right: 16px; background: var(--gold); color: var(--white); padding: 4px 12px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; z-index: 2; }
+.product-img { height: 260px; background: linear-gradient(135deg, var(--teal), var(--ocean)); display: flex; align-items: center; justify-content: center; position: relative; }
+.product-img-label { color: rgba(255,255,255,0.5); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+.product-body { padding: 24px; }
+.product-body h4 { font-size: 22px; color: var(--dark); margin-bottom: 4px; }
+.product-body .price-tag { font-size: 28px; color: var(--teal); font-family: 'Playfair Display', serif; font-weight: 700; margin-bottom: 8px; }
+.product-body .margin-tag { font-size: 13px; color: var(--gold); font-weight: 700; }
+.product-body p { font-size: 14px; color: var(--text-light); line-height: 1.7; margin-top: 12px; }
+
+/* NUMBERS */
+.numbers { background: var(--dark); color: var(--white); }
+.numbers .section-header h2 { color: var(--white); }
+.numbers .section-header p { color: rgba(255,255,255,0.6); }
+.numbers-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; max-width: 1100px; margin: 0 auto; }
+.number-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 32px 24px; text-align: center; }
+.number-card .big { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 700; color: var(--gold); display: block; margin-bottom: 8px; }
+.number-card .desc { font-size: 14px; color: rgba(255,255,255,0.7); }
+.number-card .sub { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 8px; display: block; }
+
+/* PROJECTION TABLE */
+.projection { background: var(--white); }
+.proj-table { max-width: 900px; margin: 0 auto; border-collapse: collapse; width: 100%; }
+.proj-table th { background: var(--teal); color: var(--white); padding: 14px 20px; text-align: left; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; font-family: 'Lato', sans-serif; font-weight: 700; }
+.proj-table td { padding: 14px 20px; border-bottom: 1px solid #eee; font-size: 15px; }
+.proj-table tr:last-child td { border-bottom: 3px solid var(--teal); font-weight: 700; }
+.proj-table .highlight { color: var(--teal); font-weight: 700; }
+
+/* TEAM */
+.team { background: var(--sand); }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto; }
+.team-card { background: var(--white); padding: 32px; border-radius: 4px; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+.team-avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--teal); margin: 0 auto 16px; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 28px; font-family: 'Playfair Display', serif; font-weight: 700; }
+.team-card h4 { font-size: 18px; color: var(--dark); margin-bottom: 4px; }
+.team-card .role { font-size: 13px; color: var(--gold); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.team-card p { font-size: 14px; color: var(--text-light); line-height: 1.7; }
+
+/* COMPETITIVE */
+.competitive { background: var(--white); }
+.comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; max-width: 900px; margin: 0 auto; }
+.comp-card { padding: 28px; border: 1px solid #eee; border-radius: 4px; }
+.comp-card h4 { font-size: 16px; color: var(--dark); margin-bottom: 4px; }
+.comp-card .range { font-size: 14px; color: var(--text-light); margin-bottom: 8px; }
+.comp-card .advantage { font-size: 14px; color: var(--teal); font-weight: 600; }
+.comp-own { grid-column: 1 / -1; background: var(--teal); color: var(--white); padding: 32px; border-radius: 4px; text-align: center; border: none; }
+.comp-own h4 { color: var(--gold); font-size: 20px; margin-bottom: 8px; }
+.comp-own .range { color: rgba(255,255,255,0.8); }
+.comp-own .advantage { color: var(--white); font-size: 18px; }
+
+/* CONSERVATION */
+.conservation { background: var(--sand); }
+.cons-content { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; max-width: 1100px; margin: 0 auto; align-items: center; }
+.cons-text h3 { font-size: 30px; color: var(--dark); margin-bottom: 20px; }
+.cons-text p { font-size: 16px; color: var(--text-light); line-height: 1.8; margin-bottom: 16px; }
+.partner-box { background: var(--white); border-left: 4px solid var(--teal); padding: 20px 24px; margin-top: 16px; }
+.partner-box strong { color: var(--teal); }
+
+/* BRAND ASSETS */
+.brand-assets { background: var(--white); }
+.asset-row { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; max-width: 800px; margin: 0 auto; }
+.asset-item { text-align: center; }
+.asset-item .check { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: var(--teal); color: var(--white); font-size: 22px; margin-bottom: 10px; }
+.asset-item h4 { font-size: 15px; color: var(--dark); margin-bottom: 4px; font-family: 'Lato', sans-serif; font-weight: 700; }
+.asset-item p { font-size: 13px; color: var(--text-light); }
+
+/* INVESTMENT */
+.investment { background: linear-gradient(135deg, var(--dark), #0a2a3a); color: var(--white); text-align: center; }
+.investment .section-header h2 { color: var(--white); }
+.investment .section-header p { color: rgba(255,255,255,0.6); }
+.invest-highlight { font-family: 'Playfair Display', serif; font-size: 64px; font-weight: 700; color: var(--gold); margin-bottom: 16px; }
+.invest-sub { font-size: 18px; color: rgba(255,255,255,0.7); margin-bottom: 40px; }
+.invest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 900px; margin: 0 auto 40px; }
+.invest-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 28px; }
+.invest-card h4 { color: var(--gold); font-size: 16px; margin-bottom: 8px; }
+.invest-card p { font-size: 14px; color: rgba(255,255,255,0.7); line-height: 1.7; }
+
+/* TIMELINE */
+.timeline { background: var(--white); }
+.tl-track { max-width: 700px; margin: 0 auto; position: relative; }
+.tl-track::before { content: ''; position: absolute; left: 24px; top: 0; bottom: 0; width: 3px; background: var(--teal); border-radius: 2px; }
+.tl-item { display: flex; gap: 24px; margin-bottom: 36px; position: relative; }
+.tl-dot { width: 50px; height: 50px; border-radius: 50%; background: var(--teal); flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: var(--white); font-size: 18px; font-weight: 700; z-index: 1; }
+.tl-content h4 { font-size: 18px; color: var(--dark); margin-bottom: 4px; }
+.tl-content .when { font-size: 13px; color: var(--gold); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+.tl-content p { font-size: 14px; color: var(--text-light); line-height: 1.7; }
+
+/* CTA */
+.final-cta {
+  background: var(--teal); color: var(--white); text-align: center; padding: 80px 5%;
+}
+.final-cta h2 { font-size: 36px; margin-bottom: 16px; }
+.final-cta p { font-size: 17px; opacity: 0.85; margin-bottom: 30px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.cta-btn { display: inline-block; background: var(--gold); color: var(--white); padding: 16px 48px; font-size: 14px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; transition: all 0.3s; }
+.cta-btn:hover { background: var(--gold-light); transform: translateY(-2px); }
+
+/* FOOTER */
+footer { background: var(--dark); color: rgba(255,255,255,0.5); padding: 30px 5%; text-align: center; font-size: 13px; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 34px; }
+  .hero-stats { gap: 24px; }
+  .hero-stat .num { font-size: 36px; }
+  .opp-grid, .cons-content { grid-template-columns: 1fr; }
+  .product-row, .team-grid { grid-template-columns: 1fr; }
+  .numbers-grid { grid-template-columns: 1fr 1fr; }
+  .invest-grid { grid-template-columns: 1fr; }
+  .comp-grid { grid-template-columns: 1fr; }
+  .comp-own { grid-column: auto; }
+  .nav-links { display: none; }
+}
+
+/* ANIMATIONS */
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Hatchling<span>Beach</span></a>
+  <div class="nav-links">
+    <a href="#opportunity">Opportunity</a>
+    <a href="#products">Products</a>
+    <a href="#numbers">Numbers</a>
+    <a href="#team">Team</a>
+    <a href="#timeline">Timeline</a>
+    <a href="https://hatchling-beach-demo.onrender.com" target="_blank" class="nav-cta">View Storefront</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-label">Investment Opportunity</div>
+  <h1>Premium DIY Coastal Centerpiece Kits</h1>
+  <p>5 years of craft. Zero negative reactions. Zero direct competitors. A $185B home decor market with a wide-open niche.</p>
+  <div class="hero-stats">
+    <div class="hero-stat fade-in">
+      <span class="num">5</span>
+      <span class="label">Years Validated</span>
+    </div>
+    <div class="hero-stat fade-in">
+      <span class="num">100%</span>
+      <span class="label">Loved by Recipients</span>
+    </div>
+    <div class="hero-stat fade-in">
+      <span class="num">64%</span>
+      <span class="label">Gross Margins</span>
+    </div>
+    <div class="hero-stat fade-in">
+      <span class="num">0</span>
+      <span class="label">Direct Competitors</span>
+    </div>
+  </div>
+</section>
+
+<!-- OPPORTUNITY -->
+<section class="opportunity" id="opportunity">
+  <div class="opp-grid">
+    <div class="opp-text fade-in">
+      <span class="section-label">The Opportunity</span>
+      <h3>A Market Gap Hiding in Plain Sight</h3>
+      <p>Beach decor is a perennial top-5 home decor theme. Sea turtles are universally loved, conservation-aligned, and Instagram-ready. DIY personalization is booming.</p>
+      <p>Yet no one makes a premium DIY turtle hatchling beach kit. Not on Amazon. Not on Etsy. Not in stores. The niche is completely open.</p>
+      <p>Founder Dave Wallis has been handcrafting these as gifts for South Florida's most exclusive clients for five years — from Greg Norman's estate to courtside at Miami Heat games. Every single person who received one loved it.</p>
+      <div class="market-callout">
+        <strong>$185 Billion</strong>
+        <span>U.S. Home Decor Market (2024) — growing 3.5% CAGR to $252B by 2033</span>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+      <div style="background: linear-gradient(135deg, var(--teal), var(--ocean)); border-radius: 4px; height: 200px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Product Photo</div>
+      <div style="background: linear-gradient(135deg, var(--ocean), var(--teal-dark)); border-radius: 4px; height: 200px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); font-size: 11px; text-transform: uppercase; letter-spacing: 1px;">Lifestyle Shot</div>
+      <div style="background: linear-gradient(135deg, var(--teal-dark), var(--dark)); border-radius: 4px; height: 200px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); font-size: 11px; text-transform: uppercase; letter-spacing: 1px; grid-column: 1/-1;">Dave in Action</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="section-header">
+    <span class="section-label">The Classic Collection</span>
+    <h2>Three Tiers. Premium Margins.</h2>
+    <p>Pre-painted, hand-detailed turtle hatchlings in premium glass with real sand and natural accents. Not a craft project — a luxury experience.</p>
+  </div>
+  <div class="product-row">
+    <div class="product-card fade-in">
+      <div class="product-img"><span class="product-img-label">6" Bubble Bowl</span></div>
+      <div class="product-body">
+        <h4>The Mini</h4>
+        <div class="price-tag">$69</div>
+        <div class="margin-tag">65% Gross Margin | COGS: $24.35</div>
+        <p>3 hand-painted hatchlings, 6" glass bowl, real sand, starfish + sand dollar. Perfect for desks, shelves, and gifting.</p>
+      </div>
+    </div>
+    <div class="product-card featured fade-in">
+      <span class="featured-tag">Flagship</span>
+      <div class="product-img"><span class="product-img-label">8" Scalloped Bowl</span></div>
+      <div class="product-body">
+        <h4>The Standard</h4>
+        <div class="price-tag">$129</div>
+        <div class="margin-tag">63% Gross Margin | COGS: $48.00</div>
+        <p>6 hand-painted hatchlings (mixed poses), 8" scalloped bowl, real sand, shells, starfish. The complete coastal centerpiece experience.</p>
+      </div>
+    </div>
+    <div class="product-card fade-in">
+      <div class="product-img"><span class="product-img-label">10" Premium Bowl</span></div>
+      <div class="product-body">
+        <h4>The Deluxe</h4>
+        <div class="price-tag">$199</div>
+        <div class="margin-tag">66% Gross Margin | COGS: $67.70</div>
+        <p>8 hand-painted hatchlings, 10" premium bowl, real sand, premium shells, driftwood accent. The ultimate statement piece.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section class="numbers" id="numbers">
+  <div class="section-header">
+    <span class="section-label">The Numbers</span>
+    <h2>Built for Profit from Day One</h2>
+    <p>Real costs, real margins, real projections. No fantasy math.</p>
+  </div>
+  <div class="numbers-grid">
+    <div class="number-card fade-in">
+      <span class="big">$10K</span>
+      <span class="desc">Startup Capital</span>
+      <span class="sub">50-60 kits ready to sell + Shopify + first festival + 39% contingency</span>
+    </div>
+    <div class="number-card fade-in">
+      <span class="big">$93K</span>
+      <span class="desc">Year 1 Revenue (Moderate)</span>
+      <span class="sub">700 units across three tiers</span>
+    </div>
+    <div class="number-card fade-in">
+      <span class="big">$42K</span>
+      <span class="desc">Year 1 Net Income</span>
+      <span class="sub">45% net margin after all expenses + shipping</span>
+    </div>
+    <div class="number-card fade-in">
+      <span class="big">133</span>
+      <span class="desc">Break-Even (Standard Kits)</span>
+      <span class="sub">5 months at 25 kits/month</span>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTIONS TABLE -->
+<section class="projection">
+  <div class="section-header">
+    <span class="section-label">Year 1 Scenario</span>
+    <h2>Revenue Projections</h2>
+    <p>Conservative, moderate, and aggressive scenarios — all profitable.</p>
+  </div>
+  <table class="proj-table fade-in">
+    <thead>
+      <tr>
+        <th>Scenario</th>
+        <th>Units</th>
+        <th>Revenue</th>
+        <th>Gross Profit</th>
+        <th>Net Income</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Conservative</td>
+        <td>500</td>
+        <td>$65,500</td>
+        <td>$41,895</td>
+        <td class="highlight">$26,495</td>
+      </tr>
+      <tr>
+        <td><strong>Moderate</strong></td>
+        <td><strong>700</strong></td>
+        <td><strong>$93,100</strong></td>
+        <td><strong>$59,659</strong></td>
+        <td class="highlight"><strong>$42,259</strong></td>
+      </tr>
+      <tr>
+        <td>Aggressive</td>
+        <td>1,000</td>
+        <td>$134,500</td>
+        <td>$86,305</td>
+        <td class="highlight">$68,905</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- COMPETITIVE -->
+<section class="competitive">
+  <div class="section-header">
+    <span class="section-label">Competitive Landscape</span>
+    <h2>No One Does What We Do</h2>
+    <p>The closest competitors aren't close at all.</p>
+  </div>
+  <div class="comp-grid">
+    <div class="comp-card fade-in">
+      <h4>Generic Beach Terrariums</h4>
+      <div class="range">$25 - $55 on Etsy/Amazon</div>
+      <div class="advantage">We're premium + turtle-specific</div>
+    </div>
+    <div class="comp-card fade-in">
+      <h4>Standalone Sea Turtle Figurines</h4>
+      <div class="range">$8 - $40 retail</div>
+      <div class="advantage">We're a complete experience, not just a figurine</div>
+    </div>
+    <div class="comp-card fade-in">
+      <h4>Pre-Made Coastal Centerpieces</h4>
+      <div class="range">$20 - $80 mass-produced</div>
+      <div class="advantage">Ours is DIY — personal creation, emotional ownership</div>
+    </div>
+    <div class="comp-card fade-in">
+      <h4>Artisan Gallery Pieces</h4>
+      <div class="range">$100 - $400 gallery pricing</div>
+      <div class="advantage">We're accessible luxury, not gallery exclusivity</div>
+    </div>
+    <div class="comp-own fade-in">
+      <h4>Premium DIY Turtle Hatchling Beach Kit</h4>
+      <div class="range">$69 - $199</div>
+      <div class="advantage">Market gap. We own it.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team" id="team">
+  <div class="section-header">
+    <span class="section-label">The Team</span>
+    <h2>Built to Scale</h2>
+    <p>Proven operators, a creative genius, and the man who IS the brand.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card fade-in">
+      <div class="team-avatar">DW</div>
+      <h4>Dave Wallis</h4>
+      <div class="role">Founder & Brand Face</div>
+      <p>5 years crafting premium centerpieces for South Florida's elite. Greg Norman's home. Courtside Heat games. Dave IS the brand — warm, authentic, the kind of person who makes everyone smile.</p>
+    </div>
+    <div class="team-card fade-in">
+      <div class="team-avatar">PW</div>
+      <h4>Peter Wilson</h4>
+      <div class="role">CEO & Operations</div>
+      <p>Business strategy, tech infrastructure, supply chain, and go-to-market execution. Building the machine so Dave can keep doing what he loves.</p>
+    </div>
+    <div class="team-card fade-in">
+      <div class="team-avatar">GR</div>
+      <h4>Gabe Reyes</h4>
+      <div class="role">Creative Advisor</div>
+      <p>Creative Director at Alma (LEGO account). Coors Light "Cold Activated Announcers." One Show, Clio, Effie, El Ojo, FIAP, NY Festivals winner.</p>
+    </div>
+  </div>
+  <div class="team-grid" style="margin-top: 24px;">
+    <div class="team-card fade-in">
+      <div class="team-avatar">GB</div>
+      <h4>Gladys Bernal</h4>
+      <div class="role">Marketing & Social</div>
+      <p>Marketing and social media strategy. Building the brand voice across Instagram, TikTok, and festival presence.</p>
+    </div>
+    <div class="team-card fade-in">
+      <div class="team-avatar">JW</div>
+      <h4>Jim Wilson</h4>
+      <div class="role">Warehouse & Fulfillment</div>
+      <p>Warehouse operations background. Phase 1 fulfillment from West Palm Beach. Kitting, shipping, quality control.</p>
+    </div>
+    <div class="team-card fade-in">
+      <div class="team-avatar">WC</div>
+      <h4>Willis</h4>
+      <div class="role">Scale Operations</div>
+      <p>Multi-business operator. Phase 3 Midwest warehouse hub. Expands fulfillment to 3-location nationwide network.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONSERVATION -->
+<section class="conservation">
+  <div class="cons-content">
+    <div class="cons-text fade-in">
+      <span class="section-label">Conservation</span>
+      <h3>Built-In Purpose</h3>
+      <p>Sea turtles are among the most beloved and endangered species on Earth. Five of seven species nest on Florida's beaches. Conservation isn't a marketing angle — it's in the brand's DNA.</p>
+      <p>A portion of every sale supports sea turtle research and beach nesting programs along Florida's Atlantic coast.</p>
+      <div class="partner-box">
+        <strong>Conservation Partner:</strong> Loggerhead Marine Life Center, Juno Beach, FL
+      </div>
+    </div>
+    <div style="background: linear-gradient(135deg, var(--ocean), var(--teal-dark)); height: 350px; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); font-size: 12px; letter-spacing: 2px; text-transform: uppercase;">Conservation Partner</div>
+  </div>
+</section>
+
+<!-- BRAND ASSETS -->
+<section class="brand-assets">
+  <div class="section-header">
+    <span class="section-label">Already Done</span>
+    <h2>Brand Infrastructure in Place</h2>
+    <p>This isn't starting from zero. The brand already exists.</p>
+  </div>
+  <div class="asset-row">
+    <div class="asset-item fade-in">
+      <div class="check">&#10003;</div>
+      <h4>Logo & Branding</h4>
+      <p>Professional logo, business cards, marketing flyers — printed and in use</p>
+    </div>
+    <div class="asset-item fade-in">
+      <div class="check">&#10003;</div>
+      <h4>HatchlingBeach.com</h4>
+      <p>Domain registered and ready</p>
+    </div>
+    <div class="asset-item fade-in">
+      <div class="check">&#10003;</div>
+      <h4>@hatchlingbeach</h4>
+      <p>Social handles claimed across all platforms</p>
+    </div>
+    <div class="asset-item fade-in">
+      <div class="check">&#10003;</div>
+      <h4>Supply Chain</h4>
+      <p>Full supplier directory — every component sourced and priced</p>
+    </div>
+    <div class="asset-item fade-in">
+      <div class="check">&#10003;</div>
+      <h4>Product Validation</h4>
+      <p>5 years of high-end clients, 100% positive reception</p>
+    </div>
+    <div class="asset-item fade-in">
+      <div class="check">&#10003;</div>
+      <h4>Marketing Kit</h4>
+      <p>Brand guide, product copy, social strategy, email templates ready</p>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline" id="timeline">
+  <div class="section-header">
+    <span class="section-label">Go-To-Market</span>
+    <h2>The Path to Revenue</h2>
+  </div>
+  <div class="tl-track">
+    <div class="tl-item fade-in">
+      <div class="tl-dot">1</div>
+      <div class="tl-content">
+        <div class="when">Month 1-2 — Spring 2026</div>
+        <h4>Launch</h4>
+        <p>LLC formation, sample orders, Shopify live, first 50-60 kits assembled. First FL festival booth. Initial Meta ad campaign ($250/mo).</p>
+      </div>
+    </div>
+    <div class="tl-item fade-in">
+      <div class="tl-dot">2</div>
+      <div class="tl-content">
+        <div class="when">Month 3-6 — Summer 2026</div>
+        <h4>Traction</h4>
+        <p>Scale to 50+ kits/month. Festival circuit (4-5 events). Instagram/TikTok content engine. Negotiate Phase 2 suppliers. Add West Coast warehouse.</p>
+      </div>
+    </div>
+    <div class="tl-item fade-in">
+      <div class="tl-dot">3</div>
+      <div class="tl-content">
+        <div class="when">Month 7-12 — Fall/Winter 2026</div>
+        <h4>Scale</h4>
+        <p>Holiday season push. 100+ kits/month. Midwest warehouse (Willis). 3-location fulfillment. Custom mold investigation for Phase 3 own manufacturing.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTMENT -->
+<section class="investment">
+  <div class="section-header">
+    <span class="section-label">The Ask</span>
+    <h2>Startup Capital</h2>
+  </div>
+  <div class="invest-highlight">$10,000</div>
+  <div class="invest-sub">Everything needed to go from craft to company</div>
+  <div class="invest-grid">
+    <div class="invest-card fade-in">
+      <h4>Inventory ($2,090)</h4>
+      <p>300 figurines, 50 bowls, sand, shells, accents. 50-60 complete kits ready to sell on day one.</p>
+    </div>
+    <div class="invest-card fade-in">
+      <h4>Infrastructure ($1,475)</h4>
+      <p>Shopify store, FL LLC, packaging design, product photography, kitting supplies.</p>
+    </div>
+    <div class="invest-card fade-in">
+      <h4>Go-To-Market ($1,350)</h4>
+      <p>First 2 months of Meta ads, first festival booth registration, Alibaba supplier samples for Phase 2.</p>
+    </div>
+  </div>
+  <div style="max-width: 500px; margin: 0 auto; text-align: left; color: rgba(255,255,255,0.5); font-size: 14px; line-height: 2;">
+    <div style="display: flex; justify-content: space-between;"><span>Contingency Buffer</span><span style="color: var(--gold);">$3,935 (39%)</span></div>
+    <div style="display: flex; justify-content: space-between; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 8px; margin-top: 8px;"><span style="color: var(--white); font-weight: 700;">Total</span><span style="color: var(--gold); font-weight: 700; font-size: 18px;">$10,000</span></div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Ready to Build Something Beautiful?</h2>
+  <p>The product is proven. The brand exists. The market is open. All that's left is to launch.</p>
+  <a href="https://hatchling-beach-demo.onrender.com" target="_blank" class="cta-btn">View the Storefront Demo</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  &copy; 2026 Hatchling Beach. All rights reserved. | West Palm Beach, FL | HatchlingBeach.com
+</footer>
+
+<!-- SCROLL ANIMATIONS -->
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

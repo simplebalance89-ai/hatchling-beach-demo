@@ -849,6 +849,12 @@ async def get_launch():
     return JSONResponse(LAUNCH_TIMELINE)
 
 
+
+@app.get("/vision")
+async def vision():
+    return FileResponse("static/vision.html")
+
+
 # ============================================================
 # STATIC FILES — must be last
 # ============================================================
