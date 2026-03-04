@@ -1,0 +1,24 @@
+{
+  "name": "Hatchling Beach",
+  "short_name": "Hatchling",
+  "description": "Premium DIY Coastal Centerpiece Kits",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#0D2B3E",
+  "background_color": "#0D2B3E",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/static/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/static/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
