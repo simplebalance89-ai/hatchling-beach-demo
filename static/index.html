@@ -1001,6 +1001,70 @@
     .app-footer span { color: var(--seafoam); }
 
     /* ═══════════════════════════════════════════
+       HOME / LANDING
+       ═══════════════════════════════════════════ */
+    .hero-banner {
+      text-align:center; padding:60px 24px 40px;
+      background:linear-gradient(170deg, var(--deep-ocean) 0%, #0F3D5A 40%, var(--teal) 100%);
+      border-radius:var(--radius-lg); margin-bottom:32px; position:relative; overflow:hidden;
+    }
+    .hero-banner::before {
+      content:''; position:absolute; inset:0;
+      background:radial-gradient(ellipse at 30% 80%, rgba(127,205,205,0.12) 0%, transparent 50%),
+                 radial-gradient(ellipse at 70% 20%, rgba(255,127,110,0.06) 0%, transparent 40%);
+    }
+    .hero-banner * { position:relative; }
+    .hero-turtle { font-size:3rem; margin-bottom:12px; }
+    .hero-banner h1 { font-family:var(--font-heading); font-size:2.4rem; font-weight:800; margin-bottom:8px; }
+    .hero-banner h1 .hl { color:var(--seafoam); }
+    .hero-tagline { font-size:1.1rem; color:var(--text-secondary); margin-bottom:6px; }
+    .hero-loc { font-size:0.8rem; color:var(--text-muted); letter-spacing:0.1em; text-transform:uppercase; }
+
+    .landing-section { margin-bottom:32px; }
+    .landing-title { font-family:var(--font-heading); font-size:1.4rem; font-weight:700; color:var(--seafoam); margin-bottom:6px; }
+    .landing-eyebrow { font-size:0.7rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--gold); font-weight:700; margin-bottom:8px; }
+    .landing-body { font-size:0.9rem; color:var(--text-secondary); line-height:1.7; }
+
+    .collections-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; margin-top:16px; }
+    .col-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px; transition:var(--transition); }
+    .col-card:hover { border-color:var(--border-hover); transform:translateY(-2px); }
+    .col-card-icon { font-size:2rem; margin-bottom:8px; }
+    .col-card-name { font-family:var(--font-heading); font-size:1rem; font-weight:700; margin-bottom:6px; }
+    .col-card-desc { font-size:0.8rem; color:var(--text-secondary); line-height:1.5; margin-bottom:8px; }
+    .col-card-price { font-size:0.85rem; font-weight:700; color:var(--gold); }
+    .col-card .badge { margin-bottom:8px; }
+
+    .steps-row { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px; }
+    .step-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px; text-align:center; }
+    .step-num { font-size:0.7rem; font-weight:700; color:var(--teal); background:var(--teal-glow); width:24px; height:24px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center; margin-bottom:8px; }
+    .step-icon { font-size:1.5rem; margin-bottom:6px; }
+    .step-title { font-family:var(--font-heading); font-size:0.95rem; font-weight:700; margin-bottom:4px; }
+    .step-desc { font-size:0.78rem; color:var(--text-secondary); line-height:1.5; }
+
+    .mission-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:24px; display:flex; gap:16px; align-items:flex-start; margin-top:16px; }
+    .mission-icon { font-size:2rem; flex-shrink:0; }
+    .mission-text { font-size:0.88rem; color:var(--text-secondary); line-height:1.7; }
+
+    .team-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:12px; margin-top:16px; }
+    .team-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px; text-align:center; }
+    .team-avatar { font-size:1.8rem; margin-bottom:6px; }
+    .team-name { font-size:0.85rem; font-weight:700; }
+    .team-role { font-size:0.72rem; color:var(--text-muted); }
+
+    .img-gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:8px; margin-top:16px; }
+    .img-gallery img { width:100%; border-radius:var(--radius-sm); border:1px solid var(--border); }
+
+    .cta-section { background:linear-gradient(135deg, var(--surface) 0%, var(--surface-3) 100%); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px; text-align:center; }
+    .cta-section h3 { font-family:var(--font-heading); font-size:1.3rem; margin-bottom:8px; }
+    .cta-section p { font-size:0.85rem; color:var(--text-secondary); margin-bottom:16px; }
+    .cta-email-row { display:flex; gap:8px; max-width:400px; margin:0 auto; }
+    .cta-email-row input { flex:1; background:var(--deep-ocean); border:1px solid var(--border); color:var(--text-primary); padding:10px 14px; border-radius:var(--radius-sm); font-size:0.85rem; }
+    .cta-email-row input:focus { outline:none; border-color:var(--seafoam); }
+    .cta-email-row button { background:var(--teal); color:var(--shell-white); border:none; padding:10px 20px; border-radius:var(--radius-sm); font-weight:700; font-size:0.85rem; cursor:pointer; transition:var(--transition); }
+    .cta-email-row button:hover { background:var(--teal-dark); }
+    .cta-note { font-size:0.75rem; color:var(--text-muted); margin-top:8px; }
+
+    /* ═══════════════════════════════════════════
        RESPONSIVE
        ═══════════════════════════════════════════ */
     @media (max-width: 768px) {
@@ -1022,6 +1086,12 @@
       .product-cards { grid-template-columns: 1fr; }
       .vendors-grid { grid-template-columns: 1fr; }
       .trade-shows-grid { grid-template-columns: 1fr; }
+      .steps-row { grid-template-columns: 1fr; }
+      .hero-banner h1 { font-size: 1.8rem; }
+      .collections-grid { grid-template-columns: repeat(2, 1fr); }
+      .team-grid { grid-template-columns: repeat(3, 1fr); }
+      .mission-card { flex-direction: column; }
+      .cta-email-row { flex-direction: column; }
     }
 
     @media (max-width: 480px) {
@@ -1042,12 +1112,12 @@
         <span>Hatchling Beach</span>
       </div>
       <div class="header-actions">
-        <a href="https://simplebalance89-ai.github.io/hatchling-beach-site/" target="_blank" class="vision-link">Vision Site</a>
         <button class="btn-clear-cache" onclick="clearCache()">Clear Cache</button>
       </div>
     </div>
     <nav class="tab-nav" role="tablist">
-      <button class="tab-btn active" data-tab="chat" role="tab" aria-selected="true">AI Assistant</button>
+      <button class="tab-btn active" data-tab="home" role="tab" aria-selected="true">Home</button>
+      <button class="tab-btn" data-tab="chat" role="tab" aria-selected="false">AI Assistant</button>
       <button class="tab-btn" data-tab="products" role="tab" aria-selected="false">Products</button>
       <button class="tab-btn" data-tab="investor" role="tab" aria-selected="false">Investor</button>
       <button class="tab-btn" data-tab="vendors" role="tab" aria-selected="false">Vendors</button>
@@ -1058,8 +1128,152 @@
   <!-- ═══════════════ MAIN ═══════════════ -->
   <main class="main-content">
 
+    <!-- ──── TAB 0: HOME ──── -->
+    <section id="tab-home" class="tab-panel active" role="tabpanel">
+
+      <!-- HERO -->
+      <div class="hero-banner">
+        <div class="hero-turtle">🐢</div>
+        <h1><span class="hl">Hatchling</span> Beach</h1>
+        <div class="hero-tagline">Where Every Turtle Has a Story</div>
+        <div class="hero-loc">West Palm Beach, Florida</div>
+      </div>
+
+      <!-- THE STORY -->
+      <div class="landing-section">
+        <div class="landing-eyebrow">The Story</div>
+        <div class="landing-title">Born From 4 Years of Gifting</div>
+        <div class="landing-body">
+          <p>It started in a garage in West Palm Beach. Dave Wallis spent four years handcrafting coastal centerpieces for friends, family, and high-end clients. Glass dishes filled with sand, hand-painted sea turtle hatchlings, starfish, shells — little beaches you could hold in your hands.</p>
+          <p style="margin-top:10px">Every single one got the same reaction: <em>"Where can I buy this?"</em></p>
+          <p style="margin-top:10px">Hatchling Beach is the answer. Premium DIY coastal centerpiece kits that bring the Florida coast into any room. Not kitschy beach decor — elevated, warm, personal. Every kit is a story waiting to be arranged.</p>
+        </div>
+      </div>
+
+      <!-- REAL PHOTOS -->
+      <div class="landing-section" id="photoGallery">
+        <div class="landing-eyebrow">Real Product Photos</div>
+        <div class="landing-title">Handcrafted in West Palm Beach</div>
+        <div class="img-gallery" id="galleryGrid">
+          <!-- Images will be populated when available in static/images/ -->
+        </div>
+        <p style="font-size:0.75rem;color:var(--text-muted);margin-top:8px;" id="galleryNote">Loading gallery...</p>
+      </div>
+
+      <!-- COLLECTIONS -->
+      <div class="landing-section">
+        <div class="landing-eyebrow">Collections</div>
+        <div class="landing-title">Four Ways to Bring the Beach Home</div>
+        <div class="collections-grid">
+          <div class="col-card">
+            <div class="col-card-icon">🐢</div>
+            <div class="col-card-name">Classic Coastal</div>
+            <div class="col-card-desc">Pre-painted premium turtle hatchlings on fine sand. Glass bowl, starfish, sand dollars, shells. Ready to arrange.</div>
+            <div class="col-card-price">$69 — $199</div>
+          </div>
+          <div class="col-card">
+            <div class="col-card-icon">🎨</div>
+            <div class="col-card-name">Paint Your Own</div>
+            <div class="col-card-desc">Blank turtle figurines + premium paint set. Create your own masterpiece. Perfect for families, parties, and gifts.</div>
+            <div class="col-card-price">$49 — $129</div>
+          </div>
+          <div class="col-card">
+            <span class="badge badge-gold">Q2 2026</span>
+            <div class="col-card-icon">🦞</div>
+            <div class="col-card-name">Raw Bar</div>
+            <div class="col-card-desc">Seafood-themed centerpiece with lobster, shrimp, and crab figurines on crystal ice. Coastal dining elevated.</div>
+            <div class="col-card-price">$99</div>
+          </div>
+          <div class="col-card">
+            <span class="badge badge-gold">Q2 2026</span>
+            <div class="col-card-icon">🏜️</div>
+            <div class="col-card-name">Desert Bones</div>
+            <div class="col-card-desc">Southwest edition. Cow skull, snake, cactus, and scorpion on desert sand. Coast meets canyon.</div>
+            <div class="col-card-price">$79</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOW IT WORKS -->
+      <div class="landing-section">
+        <div class="landing-eyebrow">How It Works</div>
+        <div class="landing-title">Three Steps to Your Own Beach</div>
+        <div class="landing-body">No glue. No tools. No mess. Just open, arrange, and display.</div>
+        <div class="steps-row">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <div class="step-icon">📦</div>
+            <div class="step-title">Unbox</div>
+            <div class="step-desc">Open your kit. Inside: premium glass dish, hand-painted turtles, fine sand, starfish, shells, and everything you need.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <div class="step-icon">🎨</div>
+            <div class="step-title">Arrange</div>
+            <div class="step-desc">Pour the sand, place your turtles, position the accents. Make it yours. Every arrangement is unique.</div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <div class="step-icon">✨</div>
+            <div class="step-title">Display</div>
+            <div class="step-desc">Coffee table, bookshelf, mantle — wherever you want a little piece of the coast. Rearrange anytime.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MISSION -->
+      <div class="landing-section">
+        <div class="landing-eyebrow">Our Mission</div>
+        <div class="landing-title">Conservation at the Core</div>
+        <div class="mission-card">
+          <div class="mission-icon">🌊</div>
+          <div class="mission-text">
+            <p>Hatchling Beach partners with the <strong>Loggerhead Marine Life Center</strong> in Juno Beach, Florida — just 20 minutes from our workshop in West Palm Beach. Every kit sold supports sea turtle conservation and ocean habitat protection.</p>
+            <p style="margin-top:10px">Because the turtles in your dish represent real ones that need our help. <strong>Every kit supports sea turtle conservation.</strong></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TEAM -->
+      <div class="landing-section">
+        <div class="landing-eyebrow">The Team</div>
+        <div class="landing-title">Built by the Crew</div>
+        <div class="landing-body">Six people turning a garage hobby into a coastal brand.</div>
+        <div class="team-grid">
+          <div class="team-card"><div class="team-avatar">🐢</div><div class="team-name">Dave Wallis</div><div class="team-role">Founder</div></div>
+          <div class="team-card"><div class="team-avatar">🎯</div><div class="team-name">Peter</div><div class="team-role">CEO / Strategy</div></div>
+          <div class="team-card"><div class="team-avatar">📣</div><div class="team-name">Gabe</div><div class="team-role">Marketing</div></div>
+          <div class="team-card"><div class="team-avatar">📱</div><div class="team-name">Gladys</div><div class="team-role">Social Media</div></div>
+          <div class="team-card"><div class="team-avatar">📦</div><div class="team-name">Jim Wilson</div><div class="team-role">Fulfillment</div></div>
+          <div class="team-card"><div class="team-avatar">💻</div><div class="team-name">Leon</div><div class="team-role">Tech / Web</div></div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-section">
+        <div class="landing-eyebrow" style="color:var(--gold)">Spring 2026</div>
+        <h3>Be the First to Know</h3>
+        <p>We're launching soon. Get early access, behind-the-scenes updates, and first dibs on limited collections.</p>
+        <div class="cta-email-row">
+          <input type="email" id="homeEmailInput" placeholder="Your email address">
+          <button onclick="handleHomeSignup()">Notify Me</button>
+        </div>
+        <div class="cta-note" id="homeCtaNote">No spam. Just turtles.</div>
+      </div>
+
+      <!-- FOOTER LINKS -->
+      <div style="text-align:center;margin-top:24px;padding:16px;">
+        <div style="display:flex;gap:16px;justify-content:center;margin-bottom:8px;">
+          <a href="https://instagram.com/hatchlingbeach" target="_blank" style="font-size:0.85rem;">@hatchlingbeach</a>
+          <a href="https://hatchlingbeach.com" target="_blank" style="font-size:0.85rem;">HatchlingBeach.com</a>
+        </div>
+        <div style="font-size:0.75rem;color:var(--text-muted);">Conservation partner: Loggerhead Marine Life Center, Juno Beach</div>
+      </div>
+
+    </section>
+
     <!-- ──── TAB 1: AI ASSISTANT ──── -->
-    <section id="tab-chat" class="tab-panel active" role="tabpanel">
+    <section id="tab-chat" class="tab-panel" role="tabpanel">
       <div class="chat-container">
         <div class="chat-messages" id="chatMessages">
           <div class="chat-welcome">
@@ -1596,6 +1810,61 @@
       if (isNaN(val)) return '0.00';
       return val.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
+
+    // ─── Home Tab: Gallery + Signup ───
+    const GALLERY_IMAGES = [
+      'IMG_6234_frame1.jpg','IMG_6234_frame2.jpg','IMG_6234_frame3.jpg','IMG_6234_frame4.jpg',
+      'IMG_6278_frame1.jpg','IMG_6278_frame2.jpg','IMG_6278_frame3.jpg','IMG_6278_frame4.jpg',
+      'IMG_6321_frame1.jpg','IMG_6321_frame2.jpg','IMG_6321_frame3.jpg','IMG_6321_frame4.jpg',
+      'IMG_7660_frame1.jpg','IMG_7660_frame2.jpg','IMG_7660_frame3.jpg','IMG_7660_frame4.jpg',
+      'Florida_Hatchling_Beach.png','Hatchling_Beach_logo.png','Hatchiling_beach.jpg'
+    ];
+
+    function loadGallery() {
+      const grid = document.getElementById('galleryGrid');
+      const note = document.getElementById('galleryNote');
+      if (!grid) return;
+      let loaded = 0;
+      let html = '';
+      GALLERY_IMAGES.forEach(img => {
+        html += '<img src="/static/images/' + img + '" alt="Hatchling Beach" loading="lazy" onerror="this.style.display=\'none\'" onload="galleryLoaded()">';
+      });
+      grid.innerHTML = html;
+      // Check if any images loaded after a delay
+      setTimeout(() => {
+        const visible = grid.querySelectorAll('img:not([style*="display: none"])');
+        if (visible.length === 0) {
+          note.textContent = 'Product photos coming soon — real turtle kits from West Palm Beach.';
+          grid.style.display = 'none';
+        } else {
+          note.textContent = visible.length + ' photos from the workshop';
+        }
+      }, 3000);
+    }
+
+    function galleryLoaded() {
+      const note = document.getElementById('galleryNote');
+      const grid = document.getElementById('galleryGrid');
+      if (!grid || !note) return;
+      const visible = grid.querySelectorAll('img:not([style*="display: none"])');
+      note.textContent = visible.length + ' photos from the workshop';
+    }
+
+    function handleHomeSignup() {
+      const email = document.getElementById('homeEmailInput').value.trim();
+      const note = document.getElementById('homeCtaNote');
+      if (!email || !email.includes('@')) {
+        note.textContent = 'Please enter a valid email address.';
+        note.style.color = 'var(--coral)';
+        return;
+      }
+      note.textContent = "You're on the list! We'll be in touch. 🐢";
+      note.style.color = 'var(--seafoam)';
+      document.getElementById('homeEmailInput').value = '';
+    }
+
+    // Load gallery on page load
+    loadGallery();
   </script>
 
   <!-- Service Worker Registration -->
