@@ -1054,6 +1054,31 @@
     .img-gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:8px; margin-top:16px; }
     .img-gallery img { width:100%; border-radius:var(--radius-sm); border:1px solid var(--border); }
 
+    .why-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:12px; margin-top:16px; }
+    .why-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:20px; }
+    .why-card-icon { font-size:1.6rem; margin-bottom:8px; }
+    .why-card-title { font-family:var(--font-heading); font-size:0.95rem; font-weight:700; margin-bottom:6px; color:var(--seafoam); }
+    .why-card-desc { font-size:0.8rem; color:var(--text-secondary); line-height:1.5; }
+
+    .pyo-highlight { background:linear-gradient(135deg, var(--surface) 0%, rgba(26,122,140,0.08) 100%); border:1px solid var(--border); border-radius:var(--radius-lg); padding:28px; display:flex; gap:24px; align-items:center; margin-top:16px; }
+    .pyo-icon { font-size:3rem; flex-shrink:0; }
+    .pyo-content { flex:1; }
+    .pyo-content h4 { font-family:var(--font-heading); font-size:1.1rem; margin-bottom:6px; color:var(--seafoam); }
+    .pyo-content p { font-size:0.85rem; color:var(--text-secondary); line-height:1.6; }
+    .pyo-tags { display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+    .pyo-tag { font-size:0.7rem; background:var(--teal-glow); color:var(--seafoam); padding:3px 10px; border-radius:20px; }
+
+    .events-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:12px; margin-top:16px; }
+    .event-card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px; text-align:center; transition:var(--transition); }
+    .event-card:hover { border-color:var(--border-hover); transform:translateY(-2px); }
+    .event-card-name { font-family:var(--font-heading); font-size:0.9rem; font-weight:700; color:var(--text-primary); margin-bottom:4px; }
+    .event-card-loc { font-size:0.78rem; color:var(--text-secondary); }
+    .event-card-time { font-size:0.72rem; color:var(--gold); font-weight:700; margin-top:4px; }
+
+    @media (max-width: 600px) {
+      .pyo-highlight { flex-direction:column; text-align:center; }
+    }
+
     .cta-section { background:linear-gradient(135deg, var(--surface) 0%, var(--surface-3) 100%); border:1px solid var(--border); border-radius:var(--radius-lg); padding:32px; text-align:center; }
     .cta-section h3 { font-family:var(--font-heading); font-size:1.3rem; margin-bottom:8px; }
     .cta-section p { font-size:0.85rem; color:var(--text-secondary); margin-bottom:16px; }
@@ -1147,6 +1172,85 @@
           <p>It started in a garage in West Palm Beach. Dave Wallis spent four years handcrafting coastal centerpieces for friends, family, and high-end clients. Glass dishes filled with sand, hand-painted sea turtle hatchlings, starfish, shells — little beaches you could hold in your hands.</p>
           <p style="margin-top:10px">Every single one got the same reaction: <em>"Where can I buy this?"</em></p>
           <p style="margin-top:10px">Hatchling Beach is the answer. Premium DIY coastal centerpiece kits that bring the Florida coast into any room. Not kitschy beach decor — elevated, warm, personal. Every kit is a story waiting to be arranged.</p>
+        </div>
+      </div>
+
+      <!-- WHY HATCHLING BEACH -->
+      <div class="landing-section">
+        <div class="landing-eyebrow">Why Hatchling Beach</div>
+        <div class="landing-title">A Blue Ocean Opportunity</div>
+        <div class="landing-body">No one else does this. Premium DIY sea turtle centerpiece kits — where coastal decor meets craft experience.</div>
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-card-icon">🌊</div>
+            <div class="why-card-title">No Direct Competitor</div>
+            <div class="why-card-desc">Nobody offers a premium DIY sea turtle centerpiece kit. HomeGoods sells generic decor. We sell an experience.</div>
+          </div>
+          <div class="why-card">
+            <div class="why-card-icon">💰</div>
+            <div class="why-card-title">63-66% Gross Margins</div>
+            <div class="why-card-desc">Premium pricing with controlled COGS. Standard Kit: $129 retail, $48 cost, $81 profit per unit.</div>
+          </div>
+          <div class="why-card">
+            <div class="why-card-icon">🎁</div>
+            <div class="why-card-title">Gift-Ready Packaging</div>
+            <div class="why-card-desc">Every kit ships in a branded gift box with tissue, instruction card, and conservation message. Unboxing is part of the brand.</div>
+          </div>
+          <div class="why-card">
+            <div class="why-card-icon">🐢</div>
+            <div class="why-card-title">Real Conservation Mission</div>
+            <div class="why-card-desc">Partnership with Loggerhead Marine Life Center in Juno Beach, FL. Not greenwashing — Dave lives 20 minutes away.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAINT YOUR OWN -->
+      <div class="landing-section">
+        <div class="landing-eyebrow">Featured Collection</div>
+        <div class="landing-title">Paint Your Own</div>
+        <div class="pyo-highlight">
+          <div class="pyo-icon">🎨</div>
+          <div class="pyo-content">
+            <h4>Your Turtles, Your Colors, Your Story</h4>
+            <p>Unpainted turtle figurines + premium paint sets + everything you need. Perfect for date nights, family crafting, bridal showers, and team events. Paint, arrange, display. Each kit is a one-of-a-kind creation.</p>
+            <div class="pyo-tags">
+              <span class="pyo-tag">Date Night</span>
+              <span class="pyo-tag">Family Craft</span>
+              <span class="pyo-tag">Party Activity</span>
+              <span class="pyo-tag">Corporate Events</span>
+              <span class="pyo-tag">Gifts</span>
+            </div>
+            <p style="margin-top:10px;font-size:0.8rem;color:var(--gold);font-weight:700;">Starting at $49 | 3 sizes available</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- TRADE SHOWS & EVENTS -->
+      <div class="landing-section">
+        <div class="landing-eyebrow">Coming Soon</div>
+        <div class="landing-title">2026 Trade Shows & Events</div>
+        <div class="landing-body">Catch Hatchling Beach in person at these upcoming events.</div>
+        <div class="events-grid">
+          <div class="event-card">
+            <div class="event-card-name">Surf Expo</div>
+            <div class="event-card-loc">Orlando, FL</div>
+            <div class="event-card-time">Jan / Sep 2026</div>
+          </div>
+          <div class="event-card">
+            <div class="event-card-name">NY Now</div>
+            <div class="event-card-loc">New York, NY</div>
+            <div class="event-card-time">Jan / Aug 2026</div>
+          </div>
+          <div class="event-card">
+            <div class="event-card-name">AmericasMart</div>
+            <div class="event-card-loc">Atlanta, GA</div>
+            <div class="event-card-time">Jan / Jul 2026</div>
+          </div>
+          <div class="event-card">
+            <div class="event-card-name">Local Craft Fairs</div>
+            <div class="event-card-loc">South Florida</div>
+            <div class="event-card-time">Ongoing 2026</div>
+          </div>
         </div>
       </div>
 
@@ -1827,7 +1931,8 @@
       let loaded = 0;
       let html = '';
       GALLERY_IMAGES.forEach(img => {
-        html += '<img src="/static/images/' + img + '" alt="Hatchling Beach" loading="lazy" onerror="this.style.display=\'none\'" onload="galleryLoaded()">';
+        const altText = img.replace(/[_\.]/g, ' ').replace(/frame\d/g, '').replace(/\s+/g, ' ').trim();
+        html += '<img src="/static/images/' + img + '" alt="Hatchling Beach - ' + altText + '" loading="lazy" onerror="this.style.display=\'none\'" onload="galleryLoaded()">';
       });
       grid.innerHTML = html;
       // Check if any images loaded after a delay
@@ -1850,17 +1955,36 @@
       note.textContent = visible.length + ' photos from the workshop';
     }
 
-    function handleHomeSignup() {
-      const email = document.getElementById('homeEmailInput').value.trim();
+    async function handleHomeSignup() {
+      const input = document.getElementById('homeEmailInput');
+      const email = input.value.trim();
       const note = document.getElementById('homeCtaNote');
       if (!email || !email.includes('@')) {
         note.textContent = 'Please enter a valid email address.';
         note.style.color = 'var(--coral)';
         return;
       }
-      note.textContent = "You're on the list! We'll be in touch. 🐢";
-      note.style.color = 'var(--seafoam)';
-      document.getElementById('homeEmailInput').value = '';
+      note.textContent = 'Signing up...';
+      note.style.color = 'var(--text-muted)';
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+        const data = await res.json();
+        if (res.ok) {
+          note.textContent = data.message;
+          note.style.color = 'var(--seafoam)';
+          input.value = '';
+        } else {
+          note.textContent = data.error || 'Something went wrong. Try again.';
+          note.style.color = 'var(--coral)';
+        }
+      } catch (e) {
+        note.textContent = 'Network error. Try again later.';
+        note.style.color = 'var(--coral)';
+      }
     }
 
     // Load gallery on page load

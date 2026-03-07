@@ -850,6 +850,30 @@ async def get_launch():
 
 
 
+@app.post("/api/subscribe")
+async def subscribe(request: Request):
+    """Email signup — append to file-based lead list."""
+    body = await request.json()
+    email = body.get("email", "").strip().lower()
+    if not email or "@" not in email or "." not in email.split("@")[-1]:
+        return JSONResponse({"error": "Invalid email"}, status_code=400)
+
+    leads_file = "leads.txt"
+    # Check for duplicates
+    existing = set()
+    if os.path.exists(leads_file):
+        with open(leads_file, "r") as f:
+            existing = {line.strip().split(",")[0] for line in f if line.strip()}
+
+    if email in existing:
+        return JSONResponse({"status": "already_subscribed", "message": "You're already on the list!"})
+
+    with open(leads_file, "a") as f:
+        f.write(f"{email},{datetime.now(timezone.utc).isoformat()}\n")
+
+    return JSONResponse({"status": "subscribed", "message": "Welcome to the nest! We'll be in touch."})
+
+
 @app.get("/vision")
 async def vision():
     return FileResponse("static/vision.html")
